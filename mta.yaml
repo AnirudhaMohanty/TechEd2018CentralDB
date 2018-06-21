@@ -1,7 +1,7 @@
 ID: TechEd2018CentralDB
 _schema-version: '2.1'
 description: TechEd 2018 Central DB Project - Patch 0 for SPS 03
-version: 1.0.2018
+version: 1.1.2018
 
 modules:
  - name: core_db

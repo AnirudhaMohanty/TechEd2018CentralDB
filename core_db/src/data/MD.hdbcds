@@ -146,8 +146,8 @@ context MD {
             @Comment : 'Employee Picture URL'
             EMPLOYEEPICURL : EPM.LString;
 
-            @Comment : 'Full Name'
-            FULLNAME       : String(100)          = NAME.FIRST || ' ' || NAME.LAST;
+    //        @Comment : 'Full Name'
+    //        FULLNAME       : String(100)          = NAME.FIRST || ' ' || NAME.LAST;
     };
 
     @Comment : 'Products'
