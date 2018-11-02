@@ -1,34 +1,31 @@
 ID: TechEd2018CentralDB
 _schema-version: '2.1'
 description: TechEd 2018 Central DB Project - Patch 0 for SPS 03
-version: 1.1.2018
-
+version: 1.2.2018
 modules:
- - name: core_db
-   type: hdb
-   path: core_db
-   requires:
-    - name: teched-2018-cc
-      properties:
-        TARGET_CONTAINER: '~{hdi-container-name}'
-    - name: CrossSchemaService
-      group: SERVICE_REPLACEMENTS
-      properties:
-        key: hdi-sflight-service
-        service: '~{sflight-service-name}'
-        
+  - name: core_db
+    type: hdb
+    path: core_db
+    requires:
+      - name: teched-2018-cc
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: CrossSchemaService
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: hdi-sflight-service
+          service: '~{sflight-service-name}'
 resources:
- - name: teched-2018-cc
-   parameters:
+  - name: teched-2018-cc
+    parameters:
       config:
-         schema: TECHED_2018
-   properties:
-      hdi-container-name: ${service-name}
-   type: com.sap.xs.hdi-container
-   
- - name: CrossSchemaService
-   type: org.cloudfoundry.existing-service
-   parameters:
-     service-name: CROSS_SCHEMA_SFLIGHT
-   properties:
-     sflight-service-name: '${service-name}'   
+        schema: TECHED_2018
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: CrossSchemaService
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: CROSS_SCHEMA_SFLIGHT
+    properties:
+      sflight-service-name: '${service-name}'

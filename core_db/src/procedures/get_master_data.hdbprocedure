@@ -6,7 +6,7 @@ PROCEDURE "get_master_data" (
 	             out ex_business_partners "MD.BusinessPartner" )
    LANGUAGE SQLSCRIPT
    SQL SECURITY INVOKER
-   READS SQL DATA AS
+   AS
 BEGIN USING "MasterData" as MData; 
 
  ex_max_val = MData:maxval;    -- Library variable
